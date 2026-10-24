@@ -10,7 +10,7 @@ articulatory features, explainable segment comparisons, consonant clusters,
 written nuclei, syllabification, stress, and pronunciation-realization planning.
 The `bauske` CLI exposes these capabilities for exploration.
 
-The workspace is on the 0.2.0 development cycle, uses Rust edition 2024, and
+The workspace is at version 0.2.0, uses Rust edition 2024, and
 requires Rust 1.98 or newer. Development commands and CI select Rust 1.98.0.
 Supported platforms are macOS and Linux.
 
@@ -39,6 +39,7 @@ unresolved analyses rather than silently choosing an interpretation.
 
 | Package | Path | Responsibility |
 | --- | --- | --- |
+| `bauske` | `crates/bauske` | Umbrella library re-exporting `bauske-phonology` as `phonology`; its README also supplies its rustdoc landing page. |
 | `bauske-phonology` | `crates/phonology` | Reusable phonological inventories, features, comparisons, word/cluster analysis, prosody, and realization plans. |
 | `bauske-cli` | `crates/cli` | The `bauske` binary: Clap arguments, command dispatch, rendering, and process-level tests. |
 
@@ -46,6 +47,11 @@ unresolved analyses rather than silently choosing an interpretation.
 and `PROFILE_ID`. Keep source provenance and profile semantics explicit when
 changing those contracts. Put linguistic behavior in the library and retain the
 CLI's separation between analysis, rendering, and process entrypoint.
+
+Use absolute crates.io, docs.rs, and repository links in the umbrella README so
+they work in the packaged README and generated rustdoc. The CLI binary has
+`doc = false` to avoid overwriting the umbrella library's `bauske` docs; the
+`bauske-cli` library remains documented.
 
 Integration tests live in each crate's `tests/` directory. The independent
 `tests/test-build-tools.sh` suite exercises Make and the planning helper with

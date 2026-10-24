@@ -15,6 +15,7 @@ documentation = "https://docs.rs/bauske-cli"
 [[bin]]
 name = "bauske"
 path = "src/main.rs"
+doc = false
 
 [dependencies]
 clap.workspace = true

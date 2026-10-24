@@ -24,6 +24,11 @@ The first foundation is phonological:
   and pronunciation-realization planning, with unresolved cases reported explicitly.
 - A CLI, `bauske`, for exploring these analyses.
 
+Version 0.2.0 adds the `bauske` umbrella library, exposing the phonology API as
+`bauske::phonology`, and renames the CLI from `relojban` to `bauske`. Its build
+helpers install development binaries to a configurable directory, and CI checks
+the workspace on Linux and macOS. These changes do not alter the linguistic model.
+
 The distance model currently uses categorical articulatory mismatches within
 consonants or within vowels. It is not a perceptually calibrated similarity
 measure or a whole-word rhyme score. Morphology and broader computational
@@ -31,12 +36,24 @@ linguistics are future directions.
 
 | Package | Role |
 | --- | --- |
+| [`bauske`](crates/bauske) | Umbrella library re-exporting phonology, with links to all component crates |
 | [`bauske-phonology`](crates/phonology) | Inventory, features, comparisons, and prosody |
 | [`bauske-cli`](crates/cli) | The `bauske` executable and its command interface |
 
 ## Try it
 
-Use Rust 1.98.0 or newer. From this repository:
+Use Rust 1.98.0 or newer. Install the published CLI with:
+
+```sh
+cargo +1.98.0 install bauske-cli --version 0.2.0 --locked
+bauske inventory
+```
+
+For a Rust library, add `bauske = "0.2.0"` to your dependencies and use
+`bauske::phonology`. The [umbrella crate README](crates/bauske/README.md) includes
+an example and links to each component's package and API docs.
+
+From a source checkout:
 
 ```sh
 cargo +1.98.0 test --locked --workspace
@@ -56,8 +73,7 @@ and develop tools for morphology, poetic structure, and musical text setting.
 Source claims, modelling choices, and empirical findings will remain distinct
 as that work grows.
 
-The workspace is on the **0.2.0 development cycle**; its APIs are experimental.
-The latest published release is 0.1.0, whose CLI command is still `relojban`.
+The current release is **0.2.0**; its APIs remain experimental.
 
 ## Development and releases
 

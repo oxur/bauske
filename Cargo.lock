@@ -53,6 +53,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "bauske"
+version = "0.2.0"
+dependencies = [
+ "bauske-phonology",
+]
+
+[[package]]
 name = "bauske-cli"
 version = "0.2.0"
 dependencies = [

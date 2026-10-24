@@ -1,0 +1,20 @@
+[package]
+name = "bauske"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+license.workspace = true
+repository.workspace = true
+readme = "README.md"
+description = "Umbrella crate for (Re)Lojban phonology and linguistic tools."
+keywords = ["lojban", "relojban", "phonology", "linguistics"]
+categories = ["science", "text-processing"]
+documentation = "https://docs.rs/bauske"
+include = ["Cargo.toml", "README.md", "LICENSE", "src/**"]
+
+[dependencies]
+bauske-phonology.workspace = true
+
+[lints]
+workspace = true
