@@ -1,6 +1,11 @@
 # Bauske
 
-(Re)Lojban libraries and tools for phonology, morphology, and computational linguistics.
+[![Build Status][gh-actions-badge]][gh-actions]
+[![Tags][github-tags-badge]][github-tags]
+
+[![Project Logo][logo]][logo-large]
+
+*(Re)Lojban libraries and tools for phonology, morphology, and computational linguistics*
 
 Bauske is a growing laboratory for asking how the language's sounds and word
 structures work, and what we can make with them. It began with a poetic question:
@@ -72,3 +77,19 @@ planning work is preserved.
 
 Use `make publish-dry-run` to verify the workspace packages and `make publish`
 to upload them to crates.io. The packaged crates include their own READMEs and licenses.
+
+## License
+
+``` text
+Apache License, Version 2.0
+```
+
+[//]: ---Named-Links---
+
+[logo]: assets/images/v1-x250.png
+[logo-large]: assets/images/v1-x1040.png
+[gh-actions-badge]: https://github.com/oxur/bauske/actions/workflows/ci.yml/badge.svg
+[gh-actions]: https://github.com/oxur/bauske/actions/workflows/ci.yml
+[version]: https://github.com/oxur/bauske/blob/main/.github/workflows/ci.yml
+[github-tags]: https://github.com/oxur/bauske/tags
+[github-tags-badge]: https://img.shields.io/github/tag/oxur/bauske.svg
