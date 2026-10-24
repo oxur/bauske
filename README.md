@@ -2,6 +2,8 @@
 
 [![Build Status][gh-actions-badge]][gh-actions]
 [![Tags][github-tags-badge]][github-tags]
+[![][crate-badge]][crate]
+[![][docs-badge]][docs]
 
 [![Project Logo][logo]][logo-large]
 
@@ -93,3 +95,7 @@ Apache License, Version 2.0
 [version]: https://github.com/oxur/bauske/blob/main/.github/workflows/ci.yml
 [github-tags]: https://github.com/oxur/bauske/tags
 [github-tags-badge]: https://img.shields.io/github/tag/oxur/bauske.svg
+[crate]: https://crates.io/crates/bauske
+[crate-badge]: https://img.shields.io/crates/v/bauske.svg
+[docs]: https://docs.rs/bauske/
+[docs-badge]: https://img.shields.io/badge/rust-documentation-blue.svg
