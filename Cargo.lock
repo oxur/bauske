@@ -54,14 +54,14 @@ dependencies = [
 
 [[package]]
 name = "bauske"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "bauske-phonology",
 ]
 
 [[package]]
 name = "bauske-cli"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "bauske-phonology",
  "clap",
@@ -69,7 +69,7 @@ dependencies = [
 
 [[package]]
 name = "bauske-phonology"
-version = "0.2.0"
+version = "0.3.0"
 
 [[package]]
 name = "clap"

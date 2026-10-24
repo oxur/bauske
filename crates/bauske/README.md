@@ -1,5 +1,8 @@
 # Bauske
 
+This checkout is on the 0.3.0 development cycle. The dependency and installation
+examples below target the published 0.2.0 release.
+
 An umbrella library for [Bauske](https://github.com/oxur/bauske), a (Re)Lojban
 linguistic workbench. It re-exports the phonology library as `bauske::phonology`.
 

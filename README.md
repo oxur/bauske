@@ -73,7 +73,8 @@ and develop tools for morphology, poetic structure, and musical text setting.
 Source claims, modelling choices, and empirical findings will remain distinct
 as that work grows.
 
-The current release is **0.2.0**; its APIs remain experimental.
+The workspace is on the **0.3.0 development cycle**; its APIs remain experimental.
+The latest published release is **0.2.0**.
 
 ## Development and releases
 

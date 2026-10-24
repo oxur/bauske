@@ -1,5 +1,8 @@
 # bauske-phonology
 
+This checkout is on the 0.3.0 development cycle. The dependency and installation
+examples below target the published 0.2.0 release.
+
 Source-grounded Relojban phonology for the [Bauske](https://github.com/oxur/bauske) linguistic workbench.
 
 The library provides an alphabet and diphthong inventory, explicit articulatory features, explainable segment comparisons, cluster inspection, written-nucleus analysis, syllabification, stress, and pronunciation-realization planning.

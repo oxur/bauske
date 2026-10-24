@@ -10,7 +10,7 @@ articulatory features, explainable segment comparisons, consonant clusters,
 written nuclei, syllabification, stress, and pronunciation-realization planning.
 The `bauske` CLI exposes these capabilities for exploration.
 
-The workspace is at version 0.2.0, uses Rust edition 2024, and
+The workspace is on the 0.3.0 development cycle, uses Rust edition 2024, and
 requires Rust 1.98 or newer. Development commands and CI select Rust 1.98.0.
 Supported platforms are macOS and Linux.
 
