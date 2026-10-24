@@ -7,7 +7,7 @@ GIT ?= git
 CRATE ?=
 TRACKED_FILES ?=
 
-.PHONY: help info check-tools build build-debug build-release test test-default test-no-default test-all-features fmt fmt-check lint docs check coverage clean tracked-files planning planning-worktree publish publish-dry-run publish-one
+.PHONY: help info check-tools build build-debug build-release test test-default test-no-default test-all-features fmt fmt-check lint docs check coverage clean tracked-files planning planning-worktree publish publish-dry-run publish-one test-tools
 
 help: ## Show available targets
 	@awk 'BEGIN {FS = ":.*## "} /^[a-zA-Z0-9_-]+:.*## / {printf "%-22s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
@@ -53,7 +53,10 @@ lint: ## Run Clippy for all targets with warnings denied
 docs: ## Build workspace documentation
 	$(CARGO) +$(RUST_TOOLCHAIN) doc --workspace --locked --no-deps
 
-check: check-tools fmt-check lint test-default docs ## Run standard local validation gates
+test-tools: ## Run local Make/planning helper tests
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m unittest discover -s tests -p 'test_build_tools.py' -v
+
+check: check-tools fmt-check lint test-default docs test-tools ## Run standard local validation gates
 
 coverage: ## Run optional coverage tooling when installed
 	@command -v cargo-llvm-cov >/dev/null || { echo "coverage unavailable: install cargo-llvm-cov separately" >&2; exit 1; }
