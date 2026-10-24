@@ -15,7 +15,7 @@ The first foundation is phonological:
 - Explicit articulatory features and explainable, configurable segment comparisons.
 - Word and consonant-cluster inspection, written nuclei, syllabification, stress,
   and pronunciation-realization planning, with unresolved cases reported explicitly.
-- A CLI, `relojban`, for exploring these analyses.
+- A CLI, `bauske`, for exploring these analyses.
 
 The distance model currently uses categorical articulatory mismatches within
 consonants or within vowels. It is not a perceptually calibrated similarity
@@ -25,7 +25,7 @@ linguistics are future directions.
 | Package | Role |
 | --- | --- |
 | [`bauske-phonology`](crates/phonology) | Inventory, features, comparisons, and prosody |
-| [`bauske-cli`](crates/cli) | The `relojban` executable and its command interface |
+| [`bauske-cli`](crates/cli) | The `bauske` executable and its command interface |
 
 ## Try it
 
@@ -49,12 +49,18 @@ and develop tools for morphology, poetic structure, and musical text setting.
 Source claims, modelling choices, and empirical findings will remain distinct
 as that work grows.
 
-The 0.1.0 APIs are experimental and will evolve as the research develops.
+The workspace is on the **0.2.0 development cycle**; its APIs are experimental.
+The latest published release is 0.1.0, whose CLI command is still `relojban`.
 
 ## Development and releases
 
 Run `make help` for build, test, lint, documentation, and publishing targets.
 `make check` runs the core quality gates.
+
+`make build` builds and copies `bauske` to `./bin`; `make build-release` does
+the same for an optimized build. Set `INSTALL_DIR=./local-bin` to choose another
+destination. To copy an existing build, run `make install` (or
+`make install MODE=release` for release artifacts).
 
 `make planning` sets up `.worktrees/planning` on the separate `planning` branch.
 It fetches an existing branch from `origin`, or creates and pushes an empty

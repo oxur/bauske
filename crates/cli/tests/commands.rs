@@ -5,7 +5,7 @@ use std::process::Command;
 use bauske_phonology::{ClusterPosition, SOURCE_ID, WordKind, inspect_cluster};
 
 fn run(args: &[&str]) -> std::process::Output {
-    Command::new(env!("CARGO_BIN_EXE_relojban"))
+    Command::new(env!("CARGO_BIN_EXE_bauske"))
         .args(args)
         .output()
         .expect("binary runs")
@@ -73,6 +73,13 @@ fn help_succeeds_and_lists_value_enum_choices() {
     let help = String::from_utf8_lossy(&output.stdout);
     assert!(help.contains("alphabet"));
     assert!(help.contains("diphthong"));
+    assert!(help.contains("bauske inventory"));
+    let version = run(&["--version"]);
+    assert!(version.status.success());
+    assert_eq!(
+        String::from_utf8_lossy(&version.stdout).trim(),
+        format!("bauske {}", env!("CARGO_PKG_VERSION"))
+    );
 }
 
 #[test]

@@ -1,4 +1,4 @@
-//! Thin executable entry point for the `relojban` command.
+//! Thin executable entry point for the `bauske` command.
 
 use std::{io, process::ExitCode};
 

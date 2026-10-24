@@ -3,7 +3,7 @@ use clap::{Parser, Subcommand, ValueEnum};
 /// Command-line arguments for the Relojban phonology tool.
 #[derive(Debug, Parser)]
 #[command(
-    name = "relojban",
+    name = "bauske",
     version,
     about = "Browse Relojban phonology data and representative distances"
 )]
@@ -142,7 +142,7 @@ impl From<FollowingArg> for bauske_phonology::FollowingContext {
     }
 }
 
-/// Inventory view selected by `relojban inventory --kind`.
+/// Inventory view selected by `bauske inventory --kind`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, ValueEnum)]
 pub enum InventoryKind {
     /// All alphabet characters, including punctuation and apostrophe.

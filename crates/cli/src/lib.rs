@@ -165,7 +165,7 @@ mod tests {
     fn non_broken_output_failure_returns_one() {
         let mut stderr = Vec::new();
         let code = run(
-            ["relojban", "inventory"],
+            ["bauske", "inventory"],
             BrokenWriter(io::ErrorKind::Other),
             &mut stderr,
         );
@@ -175,16 +175,9 @@ mod tests {
     #[test]
     fn prosody_profiles_and_alternate_compare_writer_failures_return_one() {
         for args in [
-            vec!["relojban", "prosody", "klama", "--kind", "brivla"],
-            vec!["relojban", "profiles"],
-            vec![
-                "relojban",
-                "compare",
-                "e",
-                "o",
-                "--profile",
-                "close-mid-e-v1",
-            ],
+            vec!["bauske", "prosody", "klama", "--kind", "brivla"],
+            vec!["bauske", "profiles"],
+            vec!["bauske", "compare", "e", "o", "--profile", "close-mid-e-v1"],
         ] {
             let code = run(
                 args.iter().copied(),
@@ -198,7 +191,7 @@ mod tests {
     #[test]
     fn broken_pipe_is_a_successful_exit() {
         let code = run(
-            ["relojban", "inventory"],
+            ["bauske", "inventory"],
             BrokenWriter(io::ErrorKind::BrokenPipe),
             Vec::new(),
         );
@@ -208,7 +201,7 @@ mod tests {
     #[test]
     fn help_writer_failure_is_handled() {
         let code = run(
-            ["relojban", "--help"],
+            ["bauske", "--help"],
             BrokenWriter(io::ErrorKind::BrokenPipe),
             Vec::new(),
         );
@@ -289,14 +282,14 @@ mod tests {
         );
 
         let analyze_code = run(
-            ["relojban", "analyze", "ai", "--kind", "cmavo"],
+            ["bauske", "analyze", "ai", "--kind", "cmavo"],
             BrokenWriter(io::ErrorKind::BrokenPipe),
             Vec::new(),
         );
         assert_eq!(analyze_code, ExitCode::SUCCESS);
         let cluster_code = run(
             [
-                "relojban",
+                "bauske",
                 "cluster",
                 "bf",
                 "--position",
@@ -310,19 +303,19 @@ mod tests {
         assert_eq!(cluster_code, ExitCode::SUCCESS);
 
         let prosody_code = run(
-            ["relojban", "prosody", "klama", "--kind", "brivla"],
+            ["bauske", "prosody", "klama", "--kind", "brivla"],
             BrokenWriter(io::ErrorKind::BrokenPipe),
             Vec::new(),
         );
         assert_eq!(prosody_code, ExitCode::SUCCESS);
         let profiles_code = run(
-            ["relojban", "profiles"],
+            ["bauske", "profiles"],
             BrokenWriter(io::ErrorKind::BrokenPipe),
             Vec::new(),
         );
         assert_eq!(profiles_code, ExitCode::SUCCESS);
         let compare_code = run(
-            ["relojban", "compare", "p", "b"],
+            ["bauske", "compare", "p", "b"],
             BrokenWriter(io::ErrorKind::BrokenPipe),
             Vec::new(),
         );
@@ -334,7 +327,7 @@ mod tests {
         let mut output = Vec::new();
         let code = run(
             [
-                "relojban",
+                "bauske",
                 "prosody",
                 "gas,tro",
                 "--kind",
@@ -360,7 +353,7 @@ mod tests {
             let mut output = Vec::new();
             let code = run(
                 [
-                    "relojban",
+                    "bauske",
                     "prosody",
                     word,
                     "--kind",

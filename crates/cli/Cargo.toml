@@ -13,7 +13,7 @@ categories = ["command-line-utilities", "text-processing"]
 documentation = "https://docs.rs/bauske-cli"
 
 [[bin]]
-name = "relojban"
+name = "bauske"
 path = "src/main.rs"
 
 [dependencies]
