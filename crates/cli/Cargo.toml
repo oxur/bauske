@@ -4,6 +4,13 @@ version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
 publish.workspace = true
+license.workspace = true
+repository.workspace = true
+readme = "README.md"
+description = "Command-line exploration of Relojban phonology, sound comparisons, and prosody."
+keywords = ["lojban", "relojban", "phonology", "cli"]
+categories = ["command-line-utilities", "text-processing"]
+documentation = "https://docs.rs/bauske-cli"
 
 [[bin]]
 name = "relojban"

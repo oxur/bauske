@@ -6,11 +6,13 @@ members = ["crates/*"]
 version = "0.1.0"
 edition = "2024"
 rust-version = "1.98"
-publish = false
+publish = ["crates-io"]
+license = "Apache-2.0"
+repository = "https://github.com/oxur/bauske"
 
 [workspace.dependencies]
 clap = { version = "=4.6.6", features = ["derive"] }
-bauske-phonology = { path = "crates/phonology" }
+bauske-phonology = { version = "0.1.0", path = "crates/phonology" }
 
 [workspace.lints.rust]
 unsafe_code = "forbid"

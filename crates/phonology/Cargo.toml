@@ -4,6 +4,13 @@ version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
 publish.workspace = true
+license.workspace = true
+repository.workspace = true
+readme = "README.md"
+description = "Source-grounded Relojban phonology, articulatory features, and prosodic analysis."
+keywords = ["lojban", "relojban", "phonology", "linguistics"]
+categories = ["science", "text-processing"]
+documentation = "https://docs.rs/bauske-phonology"
 
 [lints]
 workspace = true

@@ -49,6 +49,17 @@ and develop tools for morphology, poetic structure, and musical text setting.
 Source claims, modelling choices, and empirical findings will remain distinct
 as that work grows.
 
-These are research PoCs with evolving APIs. Packages currently have
-`publish = false`; release metadata and packaging remain to be prepared for
-the first 0.1.0 release.
+The 0.1.0 APIs are experimental and will evolve as the research develops.
+
+## Development and releases
+
+Run `make help` for build, test, lint, documentation, and publishing targets.
+`make check` runs the core quality gates.
+
+`make planning` sets up `.worktrees/planning` on the separate `planning` branch.
+It fetches an existing branch from `origin`, or creates and pushes an empty
+orphan branch if none exists. Later updates are fast-forward only; local
+planning work is preserved.
+
+Use `make publish-dry-run` to verify the workspace packages and `make publish`
+to upload them to crates.io. The packaged crates include their own READMEs and licenses.
